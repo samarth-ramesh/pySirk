@@ -1,0 +1,11 @@
+die roll
+new turn
+attack?
+territory win
+border change
+isfriendlynation?
+game win?
+troop in territory loss
+reinforce?
+endturn?
+

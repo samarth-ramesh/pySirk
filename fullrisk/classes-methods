@@ -1,0 +1,24 @@
+class atack
+	to attack or not. discretionary logic. 
+	actual war:
+		is victory?
+		number of attacker dies
+		number of defender dies
+		the throw
+		the computation
+		the result		
+	attacker is a player
+class defend
+	fortify?
+	defender is a player
+class player
+	number of territories owned
+	troops gained per turn
+
+class territory
+	owner
+	troops present
+	territories has multiple borders
+class border
+	is a territory having non friendly border
+	path from territory A to B?
