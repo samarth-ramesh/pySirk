@@ -1,5 +1,5 @@
 class atack
-	to attack or not. discretionary logic. 
+	t
 	actual war:
 		is victory?
 		number of attacker dies
@@ -7,7 +7,7 @@ class atack
 		the throw
 		the computation
 		the result		
-	attacker is a player
+	attacker is a group of methods that are logically together
 class defend
 	fortify?
 	defender is a player
@@ -19,6 +19,11 @@ class territory
 	owner
 	troops present
 	territories has multiple borders
+	border is an attribute of territory
+	
 class border
 	is a territory having non friendly border
 	path from territory A to B?
+
+class DecisionsOfAttack
+	o attack or not. discretionary logic. 
