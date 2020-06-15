@@ -17,9 +17,10 @@ class attack:
 		self.m=0
 		while ((self.a==0)):
 			self.t=attack()
+			self.l=adecide()
 			#print("war!")
 			self.m=self.m+1
-			if attack.win(self.t,nd)>0:
+			if adecide.win(self.l,nd)>0:
 				self.k=1
 				break
 			else:
@@ -31,7 +32,7 @@ class attack:
 				self.out=attack.compare(self.t,self.aroll,self.droll)
 				na=attack.aresult(self.t,self.out,na)
 				nd=attack.dresult(self.t,self.out,nd)
-				self.a=attack.cont(self.t,na,nd)
+				self.a=adecide.cont(self.l,na,nd)
 		print("numturns= ",self.m)
 		return self.k
 	def numadie(self,na):
@@ -64,7 +65,7 @@ class attack:
 		for self.x in range(num):
 			self.aroll[self.x]=random.randint(1,6)
 		self.aroll.sort(reverse=True)
-		print("aroll= ",self.aroll)
+		#print("aroll= ",self.aroll)
 		return self. aroll
 	
 	def droll(self,num):
@@ -73,7 +74,7 @@ class attack:
 		for self.x in range(num):
 			self.droll[self.x]=random.randint(1,6)
 		self.droll.sort(reverse=True)
-		print("droll= ",self.droll)
+		#print("droll= ",self.droll)
 		return self.droll
 	
 	def compare(self,aroll,droll):
@@ -81,44 +82,29 @@ class attack:
 		for self.x in range(len(droll)):
 			if aroll[self.x] > droll[self.x]:
 				self.out[1]=self.out[1]-1
-				print("defense lost 1")
+				#print("defense lost 1")
 			else:
 				self.out[0]=self.out[0]-1
-				print("attack lost1")
+				#print("attack lost1")
 			self.x=self.x+1
-		print("out= ", self.out)
+		#print("out= ", self.out)
 		return self.out
 	
 	def aresult(self,out,na):
 		na=na+out[0]
-		print("aresult= ",na)
+		#print("aresult= ",na)
 		return na
 	def dresult(self,out,nd):
 		nd=nd+out[1]
-		print("dresult= ",nd)
+		#print("dresult= ",nd)
 		return nd
-	
-	def win(self,nd):
-		if nd>0:
-			self.victory=0
-		else:
-			self.victory=1
-		return self.victory
-	
-	def  cont(self,na,nd):
-		a=attack()
-		if ((na-nd>5) or (nd<2 and na>4)):
-			self.x=0
-		else:
-			self.x=1
-		return self.x
 	
 	
 def main():
-	#na=int(input("na"))
-	#nd=int(input("nd")) 
-	na=1000
-	nd=20
+	na=int(input("na= \t"))
+	nd=int(input("nd= \t")) 
+	#na=1000
+	#nd=20
 	a=attack()
 	print(attack.war(a,na,nd))
 main()

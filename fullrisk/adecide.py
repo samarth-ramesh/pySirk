@@ -9,10 +9,19 @@ class adecide:
 		else:
 			self.x=0
 		
-		if self.x==1:
-			self.t==attack()
-			self.result=attack.war(self.t,na,nd)
-		else:
-			pass
 		return self.x
-
+	
+	def win(self,nd):
+		if nd>0:
+			self.victory=0
+		else:
+			self.victory=1
+		return self.victory
+	
+	def  cont(self,na,nd):
+		self.t=adecide()
+		if ((na-nd>5) or (nd<2 and na>4)or(adecide.decide(self.t,na,nd))):
+			self.x=0
+		else:
+			self.x=1
+		return self.x
