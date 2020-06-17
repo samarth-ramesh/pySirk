@@ -22,13 +22,16 @@ class creatg:
 		self.rng=territories.numt//nump
 		for x in range(1,((1+self.rng))):
 			for y in range(nump):
-				#owner[self.deck[(nump*x)+y]]=y
-				pass
+                            if ((nump*x)+y>territories.numt):
+                                pass
+                            else:
+                                owner[self.deck[((nump*x)-1)+y]]=y
+				
 		if (territories.numt%nump !=0):
 			for x in range(territories.numt%nump):
-				#owner[self.deck[(territories.numt-x)]]=random.randint(0,nump-1)
-				pass
-		print(len(self.deck))
+				owner[self.deck[(territories.numt)-1]]=random.randint(0,nump-1)
+			
+		print(owner)
 		
 
 def main():
