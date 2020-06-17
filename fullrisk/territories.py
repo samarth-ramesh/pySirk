@@ -4,8 +4,12 @@ from borders import border
 import random
 
 class territories:
-	numt=len(border.border)
-	owner={}
+	def  __init__(self):
+		self.numt=len(border.border)
+		owner={}
+	
+	def getTerritories(self):
+		return self.numt
 	
 	def owner(self,new):
 		territories.owner=new
@@ -15,4 +19,4 @@ class territories:
 		print("new owner of territory with number", sno,"is",territories.owner[sno])
 
 
-	
+
