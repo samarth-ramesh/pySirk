@@ -13,13 +13,20 @@ from start import GameCreate
 import territories
 from territories import territories
 
+import newTurn
+from newTurn import newTurn
+
 def main():
     nump=int(input("number of players=\t"))
     a=GameCreate()
     mappedOwner=a.giveTerritory(nump)
+    b=territories()
+    b.initOwner(mappedOwner)
     for x in mappedOwner:
         a.giveTroops(x)
-    b=territories()
-    print(b.troops,mappedOwner)
     
+    #print(b.troops,mappedOwner)
+    b
+    c=newTurn()
+    c.getMaxTroops(1)
 main()

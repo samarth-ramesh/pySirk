@@ -6,13 +6,13 @@ import random
 class territories:
 	def  __init__(self):
 		self.numt=len(test.border)
-		owner={}
+	owner={}
 	troops={}
 	
 	def getTerritories(self):
 		return self.numt
 	
-	def owner(self,new):
+	def initOwner(self,new):
 		territories.owner=new
 	
 	def change_owner(self, sno, new):
