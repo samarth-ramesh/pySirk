@@ -8,8 +8,11 @@ class newTurn:
         for self.x in teritoryOwner:
             if teritoryOwner[self.x]==player:
                 self.y+=1
+                #print("\t",self.x)
         if self.y<9:
             self.numTroops=3
         else:
             self.numTroops=int(self.y/3)
         print(self.numTroops)
+
+     
