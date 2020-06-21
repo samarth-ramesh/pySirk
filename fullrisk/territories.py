@@ -1,11 +1,11 @@
 import borders
-from borders import border
+from borders import test
 
 import random
 
 class territories:
 	def  __init__(self):
-		self.numt=len(border.border)
+		self.numt=len(test.border)
 		owner={}
 		troops={}
 	

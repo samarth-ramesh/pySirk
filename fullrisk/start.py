@@ -1,5 +1,5 @@
 import borders
-from borders import border
+from borders import test
 
 import territories
 from territories import territories
@@ -35,7 +35,8 @@ class GameCreate:
 		return self.owner
     
     def giveTroops(self,sno):
-        
+        a=territories()
+        a.setTroops(sno,1)
 
 
 
