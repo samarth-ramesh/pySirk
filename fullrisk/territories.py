@@ -7,6 +7,7 @@ class territories:
 	def  __init__(self):
 		self.numt=len(border.border)
 		owner={}
+		troops={}
 	
 	def getTerritories(self):
 		return self.numt
@@ -18,5 +19,7 @@ class territories:
 		territories.owner[sno]=new
 		print("new owner of territory with number", sno,"is",territories.owner[sno])
 
-
+    def setTroops(self,sno,num):
+        troops[sno]=num
+        
 

@@ -33,6 +33,9 @@ class GameCreate:
 			self.owner[shuffledDeck[self.x-1]+1]=(self.x%nump)+1
 			print(self.numtpp)
 		return self.owner
-				
+    
+    def giveTroops(self,sno):
+        
+
 
 
