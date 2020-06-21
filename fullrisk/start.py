@@ -31,12 +31,12 @@ class GameCreate:
 		shuffledDeck=self.shuffleDeck(deck)
 		for self.x in range(1,self.getTerritories()+1):
 			self.owner[shuffledDeck[self.x-1]+1]=(self.x%nump)+1
-			print(self.numtpp)
+			#print(self.numtpp)
 		return self.owner
     
-    def giveTroops(self,sno):
-        a=territories()
-        a.setTroops(sno,1)
+	def giveTroops(self,sno):
+		a=territories()
+		a.setTroops(sno,1)
 
 
 

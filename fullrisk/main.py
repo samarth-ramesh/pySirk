@@ -10,12 +10,16 @@ from borders import test
 import start
 from start import GameCreate
 
+import territories
+from territories import territories
 
 def main():
-    nump=int(input("number of players"))
+    nump=int(input("number of players=\t"))
     a=GameCreate()
     mappedOwner=a.giveTerritory(nump)
     for x in mappedOwner:
         a.giveTroops(x)
+    b=territories()
+    print(b.troops,mappedOwner)
     
 main()

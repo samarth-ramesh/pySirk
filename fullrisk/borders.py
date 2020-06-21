@@ -8,5 +8,5 @@ class border:
 		self.out=self.b[sno]
 		return self.out
 
-class testBorder(border):
-    border={1:[2,4],2:[1,3],3:[1,4]}
+class test(border):
+    border={1:[2,4],2:[1,3],3:[1,4],4:[1,3]}
