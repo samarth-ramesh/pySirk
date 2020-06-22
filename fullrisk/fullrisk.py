@@ -12,26 +12,41 @@ class attack:
            #compare(list)
            #effect(int)
     pass    
+
+
 class defend:
+
+
     #methods for defending
         #number of troops(int)
     
     pass
 
+
 class armies:
+
+
     :#methods for armies(nations)
         #number of territories(int)
         #number of new troops available(int)
         #mission(future only)(int)
     pass
+
+
 class territories:
+
+
     :#methods for territories
         #owner of territories(int)
         #number of troops at territory(int)
         #is defender(bool)
         #number of defender troops at borders(dict)
     pass
+
+
 class borders:
+
+
 #the different territories are stored as a dictionary with a serial no. as a key and the owner as a value
 #the bordering nations are then stored as a dictionary, stored within a list. the key of the dictionary being the serial no. and the value being the number of troops     
     pass

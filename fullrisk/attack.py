@@ -2,6 +2,8 @@ import random
 import adecide
 from adecide import adecide
 class attack:
+	
+	
 	def start(self,na,nd):
 		self.x=0
 		self.l=adecide()
@@ -33,6 +35,7 @@ class attack:
 				na=attack.aresult(self.t,self.out,na)
 				nd=attack.dresult(self.t,self.out,nd)
 				self.a=adecide.cont(self.l,na,nd)
+
 		print("numturns= ",self.m)
 		return self.k
 	def numadie(self,na):

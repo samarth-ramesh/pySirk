@@ -17,6 +17,8 @@ import newTurn
 from newTurn import newTurn
 
 def main():
+    
+    
     nump=int(input("number of players=\t"))
     a=GameCreate()
     mappedOwner=a.giveTerritory(nump)
@@ -29,4 +31,6 @@ def main():
     b
     c=newTurn()
     c.getMaxTroops(1)
+
+
 main()
