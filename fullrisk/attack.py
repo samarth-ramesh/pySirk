@@ -1,38 +1,23 @@
 import random
-import adecide
-from adecide import adecide
 class attack:
-	def start(self,na,nd):
-		self.x=0
-		self.l=adecide()
-		self.m=attack()
-		if adecide.decide(self.l,na,nd)==1:
-			self.x=adecide.war(self.m,na,nd)
-		else:
-			pass
-		return self.x
-		
-	def war(self,na,nd):
+	def war(self,na,nd,mt):
 		self.a=0
 		self.m=0
-		while ((self.a==0)):
-			self.t=attack()
-			self.l=adecide()
+		while ((na>=mt)):
 			#print("war!")
 			self.m=self.m+1
-			if adecide.win(self.l,nd)>0:
+			if self.win(self.l,nd)>0:
 				self.k=1
 				break
 			else:
 				self.k=0
-				self.numadie=attack.numadie(self.t,na)
-				self.numddie=attack.numddie(self.t,nd)
-				self.aroll=attack.aroll(self.t,self.numadie)
-				self.droll=attack.droll(self.t,self.numddie)
-				self.out=attack.compare(self.t,self.aroll,self.droll)
-				na=attack.aresult(self.t,self.out,na)
-				nd=attack.dresult(self.t,self.out,nd)
-				self.a=adecide.cont(self.l,na,nd)
+				self.numadie=self.numadie( na)
+				self.numddie=self.numddie( nd)
+				self.aroll=self.aroll( self.numadie)
+				self.droll=self.droll( self.numddie)
+				self.out=self.compare( self.aroll,self.droll)
+				na=self.aresult( self.out,na)
+				nd=self.dresult( self.out,nd)
 		print("numturns= ",self.m)
 		return self.k
 	def numadie(self,na):
@@ -60,8 +45,7 @@ class attack:
 		return self.out
 	
 	def aroll(self,num):
-		self.j=attack()
-		self.aroll=attack.diecreate(self.j,num)
+		self.aroll=self.diecreate( num)
 		for self.x in range(num):
 			self.aroll[self.x]=random.randint(1,6)
 		self.aroll.sort(reverse=True)
@@ -69,8 +53,7 @@ class attack:
 		return self. aroll
 	
 	def droll(self,num):
-		self.j=attack()
-		self.droll=attack.diecreate(self.j,num)
+		self.droll=self.diecreate( num)
 		for self.x in range(num):
 			self.droll[self.x]=random.randint(1,6)
 		self.droll.sort(reverse=True)
@@ -98,6 +81,13 @@ class attack:
 		nd=nd+out[1]
 		#print("dresult= ",nd)
 		return nd
-	
+	def win(nd):
+		if nd == 0:
+			self.result=1
+		else self.result=0
+def main():
+	na= input("na\t")
+	nd=input("nd\t")
+	mt=input("mt\t")
 	
 
