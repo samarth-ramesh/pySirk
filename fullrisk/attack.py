@@ -6,36 +6,36 @@ class attack:
 		while ((na>=mt)):
 			#print("war!")
 			self.m=self.m+1
-			if self.win(self.l,nd)>0:
+			if self.win(nd)>0:
 				self.k=1
+				print("won")
 				break
 			else:
 				self.k=0
-				self.numadie=self.numadie( na)
-				self.numddie=self.numddie( nd)
-				self.aroll=self.aroll( self.numadie)
-				self.droll=self.droll( self.numddie)
-				self.out=self.compare( self.aroll,self.droll)
-				na=self.aresult( self.out,na)
-				nd=self.dresult( self.out,nd)
-		print("numturns= ",self.m)
+				print("done")
+				self.numADie=self.numadie(4)
+				self.numDefenderDie=self.numddie(nd)
+				self.attackerRoll=self.aroll(self.numAttackerDie)
+				self.defenderRoll=self.droll(self.numDefenderDie)
+				self.out=self.compare(self.attackerRoll,self.defenderRoll)
+				na=self.aresult(self.out,na)
+				nd=self.dresult(self.out,nd)
+		print("numturns= ",self.m-1,"Result=",self.k)
 		return self.k
 	def numadie(self,na):
 		if na>3:
-			self.numadie=3
+			self.numAttackerDie=3
 		else:
-			self.numadie=na-1
+			self.numAttackerDie=na-1
 		#print("numadie= ",self.numadie)
-		return self.numadie
+		return self.numAttackerDie
 	def numddie(self,nd):
 		if nd>1:
-			self.numddie=2
+			self.numDefenderDie=2
 		elif nd==1:
-			self.numddie=1
-		else:
-			self.numddie=0
+			self.numDefenderDie=1
 		#print("numddie= ",self.numddie)
-		return self.numddie
+		return self.numDefenderDie
 		
 	def diecreate(self,num):
 		self.out=[]
@@ -62,14 +62,24 @@ class attack:
 	
 	def compare(self,aroll,droll):
 		self.out=[0,0]
-		for self.x in range(len(droll)):
-			if aroll[self.x] > droll[self.x]:
-				self.out[1]=self.out[1]-1
+		if len(aroll)>len(droll):
+			for self.x in range(len(droll)):
+				if aroll[self.x] > droll[self.x]:
+					self.out[1]=self.out[1]-1
+					#print("defense lost 1")
+				else:
+					self.out[0]=self.out[0]-1
+					#print("attack lost 1")
+				self.x=self.x+1
+		else:
+			for self.x in range(len(aroll)):
+				if aroll[self.x] > droll[self.x]:
+					self.out[1]=self.out[1]-1
 				#print("defense lost 1")
-			else:
-				self.out[0]=self.out[0]-1
+				else:
+					self.out[0]=self.out[0]-1
 				#print("attack lost1")
-			self.x=self.x+1
+				self.x=self.x+1
 		#print("out= ", self.out)
 		return self.out
 	
@@ -81,13 +91,18 @@ class attack:
 		nd=nd+out[1]
 		#print("dresult= ",nd)
 		return nd
-	def win(nd):
+	def win(self,nd):
 		if nd == 0:
 			self.result=1
-		else self.result=0
+		else:
+			self.result=0
+		return self.result
 def main():
-	na= input("na\t")
-	nd=input("nd\t")
-	mt=input("mt\t")
-	
+	na= int(input("na\t"))
+	nd=int(input("nd\t"))
+	mt=int(input("mt\t"))
+	a=attack()
+	#print(a.numadie(na))
+	a.war(na,nd,mt)
 
+main()
