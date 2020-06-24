@@ -79,21 +79,15 @@ class attack:
 	
 	def compare(self,aroll,droll):
 		self.out=[0,0]
-		if len(aroll)>len(droll):
-			for self.x in range(len(droll)):
-				if aroll[self.x] > droll[self.x]:
-					self.out[1]=self.out[1]-1
-					#print("defense lost 1")
-				else:
-					self.out[0]=self.out[0]-1                        
-		else:
-			for self.x in range(len(droll)):
-				if aroll[self.x] > droll[self.x]:
-					self.out[1]=self.out[1]-1
-					#print("defense lost 1")
-				else:
-					self.out[0]=self.out[0]-1
-		
+		for self.x in range(len(droll)):
+			if aroll[self.x] > droll[self.x]:
+				self.out[1]=self.out[1]-1
+				#print("defense lost 1")
+			else:
+				self.out[0]=self.out[0]-1
+				#print("attack lost1")
+			self.x=self.x+1
+		#print("out= ", self.out)
 		return self.out
 	
 	def aresult(self,out,na):
